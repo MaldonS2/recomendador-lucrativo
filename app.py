@@ -5,6 +5,9 @@ import uuid
 
 # Código de layout e outras definições...
 
+# Definindo as áreas premium
+premium_bloqueado = ["Lançamento de infoproduto 🔒", "Mentoria/consultoria personalizada 🔒"]
+
 # Formulário de entrada
 with st.form("perfil_form"):
     st.markdown("### 🧠 Seu perfil digital")
