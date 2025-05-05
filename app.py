@@ -1,8 +1,4 @@
-# Este código deve ser executado em um ambiente com Streamlit instalado (ex: localmente ou Streamlit Cloud).
-# Para rodar localmente: instale com `pip install streamlit` e execute com `streamlit run nome_do_arquivo.py`
-
 import streamlit as st
-from streamlit_extras.colored_header import colored_header
 from fpdf import FPDF
 import uuid
 import os
@@ -29,7 +25,9 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-colored_header("🔍 Recomendador de Áreas Lucrativas na Internet", description="Receba planos personalizados para lucrar R$10.000+ por mês.", color_name="green-70")
+# Substituindo o uso de colored_header por markdown simples
+st.markdown("## 🔍 Recomendador de Áreas Lucrativas na Internet")
+st.markdown("Receba planos personalizados para lucrar R$10.000+ por mês.")
 
 # Lead capture
 st.markdown("💌 **Quer receber seu plano em PDF por e-mail?**")
