@@ -1,8 +1,4 @@
-# Este código deve ser executado em um ambiente com Streamlit instalado (ex: localmente ou Streamlit Cloud).
-# Para rodar localmente: instale com `pip install streamlit` e execute com `streamlit run nome_do_arquivo.py`
-
 import streamlit as st
-from streamlit_extras.colored_header import colored_header
 from fpdf import FPDF
 import uuid
 from io import BytesIO
@@ -29,7 +25,12 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-colored_header("🔍 Recomendador de Áreas Lucrativas na Internet", description="Receba planos personalizados para lucrar R$10.000+ por mês.", color_name="green-70")
+st.markdown("""
+    <div style='padding: 1rem; background-color: #e0f2f1; border-left: 5px solid #00796b; border-radius: 8px;'>
+        <h2>🔍 Recomendador de Áreas Lucrativas na Internet</h2>
+        <p>Receba planos personalizados para lucrar R$10.000+ por mês.</p>
+    </div>
+""", unsafe_allow_html=True)
 
 # Lead capture
 st.markdown("💌 **Quer receber seu plano em PDF por e-mail?**")
@@ -41,6 +42,7 @@ with st.form("email_form"):
         st.success("Plano será enviado assim que for gerado!")
 
 # Formulário de entrada
+submit = False
 with st.form("perfil_form"):
     st.markdown("### 🧠 Seu perfil digital")
     tempo_dia = st.slider("Quantas horas por dia você pode dedicar?", 0, 12, 4)
