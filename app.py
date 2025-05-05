@@ -3,10 +3,36 @@ from fpdf import FPDF
 import io
 import uuid
 
-# Código de layout e outras definições...
+# Definindo os planos com suas etapas
+planos = {
+    "YouTube Shorts + Afiliados": [
+        "1. Escolha um nicho lucrativo (ex: finanças, emagrecimento, produtividade).",
+        "2. Crie uma conta no YouTube e personalize seu canal.",
+        "3. Encontre produtos digitais em Hotmart, Eduzz, Amazon Afiliados.",
+        "4. Crie vídeos curtos com ganchos fortes e chamadas para ação.",
+        "5. Use CapCut ou Canva para edição.",
+        "6. Poste diariamente com títulos otimizados.",
+        "7. Inclua o link de afiliado na descrição.",
+        "8. Aplique copywriting para melhorar os CTAs.",
+        "9. Monitore os vídeos que mais convertem."
+    ],
+    "Mini-funnel com PLR e tráfego pago": [
+        "1. Escolha um nicho validado.",
+        "2. Compre um produto PLR (IDPLR.com).",
+        "3. Crie uma landing page (Systeme.io, Notion).",
+        "4. Configure um domínio personalizado.",
+        "5. Crie anúncios para Facebook, Instagram ou TikTok Ads.",
+        "6. Comece com orçamento pequeno (R$10–30/dia).",
+        "7. Otimize com base em CTR, conversão e ROI.",
+        "8. Reinvista os lucros em tráfego e lista de emails.",
+        "9. Automatize com funis e email marketing."
+    ]
+}
 
 # Definindo as áreas premium
 premium_bloqueado = ["Lançamento de infoproduto 🔒", "Mentoria/consultoria personalizada 🔒"]
+
+# Código de layout e outras definições...
 
 # Formulário de entrada
 with st.form("perfil_form"):
@@ -60,7 +86,7 @@ if submit:  # Agora a variável 'submit' está definida corretamente
         tag = "🔒" if bloqueado else "✅"
         st.markdown(f"### {tag} {area} — Compatibilidade: {score}%")
         if not bloqueado:
-            if area in planos:
+            if area in planos:  # Agora 'planos' está definido corretamente
                 with st.expander("📘 Ver plano passo a passo"):
                     for passo in planos[area]:
                         st.markdown(f"- {passo}")
